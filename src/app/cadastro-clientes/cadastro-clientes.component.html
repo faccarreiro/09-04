@@ -1,0 +1,26 @@
+<h1>Cadastro de Clientes</h1>
+
+<div class="container">
+  <form [formGroup] ="formGroup" (ngSubmit)="cadastrar()">
+
+    <div class="form-group">
+      <label>Nome: </label>
+      <input type="text" class="form-control" name="nome" formControlName="nome">
+      <small *ngIf="formGroup.controls.nome.dirty&& formGroup.controls.nome.errors" id="emailHelp" class="form-text text-mute">Nome e invalido</small>
+    </div>
+    <div class="form-group">
+      <label>E-mail: </label>
+      <input type="text" class="form-control" name="email" formControlName="email">
+      <small *ngIf="formGroup.controls.email.dirty&&formGroup.controls.email.errors" id="emailHelp" class="form-text text-mute">email e invalido</small>
+    </div>
+    <div class="form-group">
+      <label>Telefone: </label>
+      <input type="text" class="form-control" name="telefone" formControlName="telefone">
+      <small *ngIf="formGroup.controls.telefone.dirty&&formGroup.controls.telefone.errors" id="emailHelp" class="form-text text-mute">telefone e invalido</small>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" [disabled]="formGroup.invalid">Cadastrar</button>
+    </div>
+  </form>
+
+</div>
